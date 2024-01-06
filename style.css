@@ -18,6 +18,7 @@ h1 {
     font-weight: bold;
     color: #666666;
     margin: 0 18px;
+    text-transform: uppercase;
 }
 
 header {
