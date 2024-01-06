@@ -15,11 +15,10 @@ function renderBundeslaender(responseAsJson) {
         let laender = responseAsJson[i];
 
         document.getElementById('bundeslaender').innerHTML += /* html */ `
-        <div class="laenderCard">
+        <a href="${laender['url']}" class="laenderCard">
             <div>${laender['name']}</div>
-            <div>${laender['population']}</div>
-        </div>
+            <div>${laender['population']} Millionen</div>
+        </a>
         `;
-        
     }
 }
