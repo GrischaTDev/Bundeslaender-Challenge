@@ -2,13 +2,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     justify-content: center;
-    background-color: green;
+}
+
+content {
+    max-width: 1024px;
 }
 
 main {
-    width: 100%;
-    max-width: 1024px;
-    padding: 5px;
+    margin: 5px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -24,7 +25,7 @@ h1 {
 
 header {
     background-color: #dddddd;
-    width: 100%;
+    margin: 5px;
     height: 100px;
     display: flex;
     align-items: center;
@@ -32,21 +33,33 @@ header {
 
 #bundeslaender {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+    flex-grow: 1;
 }
 
-.laenderCard {
+.laenderBox {
     text-decoration: none;
     color: black;
     border: 10px solid #eeeeee;
     margin: 5px;
     padding: 10px;
-    width: 33%;
+    width: calc(33% - 7px);
+    box-sizing: border-box;
     cursor: pointer;
-    flex-grow: 1;
-    
 }
-.laenderCard:hover {
+
+.laenderBox:hover {
     border: 10px solid rgba(255, 166, 0, 0.233);
     background-color: rgba(255, 166, 0, 0.178);
+}
+
+.name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.population {
+    font-size: 14px;
+    color: rgb(141, 141, 141);
 }

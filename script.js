@@ -1,23 +1,24 @@
+let bundeslaender = [];
 
-async function loadBundeslaender() {
-    let bundeslaender = 'bundesland.json';
-    let response = await fetch(bundeslaender);
-    let responseAsJson = await response.json();
-    console.log(responseAsJson);
 
-    renderBundeslaender(responseAsJson)
+async function init() {
+    let response = await fetch('./bundesland.json');
+    bundeslaender = await response.json();
+    renderBundeslaender()
 }
 
 
 function renderBundeslaender(responseAsJson) {
+    let laenderContent = document.getElementById('bundeslaender');
+    laenderContent.innerHTML = '';
 
-    for (let i = 0; i < responseAsJson.length; i++) {
-        let laender = responseAsJson[i];
+    for (let i = 0; i < bundeslaender.length; i++) {  // Hier wird die toLocaleString-Methode mit dem Argument 'de-DE' aufgerufen, um das deutsche Zahlenformat zu verwenden. 
+        let land = bundeslaender[i];
 
-        document.getElementById('bundeslaender').innerHTML += /* html */ `
-        <a href="${laender['url']}" class="laenderCard">
-            <div>${laender['name']}</div>
-            <div>${laender['population']} Millionen</div>
+        laenderContent.innerHTML += /* html */ `
+        <a href="${land['url']}" target="_blank" class="laenderBox">
+            <div class="name">${land['name']}</div>
+            <div class="population">${land['population'].toLocaleString('de-DE')} Millionen</div>
         </a>
         `;
     }
