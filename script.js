@@ -1,4 +1,5 @@
 let bundeslaender = [];
+let letters = [];
 
 
 async function init() {
@@ -21,5 +22,24 @@ function renderBundeslaender(responseAsJson) {
             <div class="population">${land['population'].toLocaleString('de-DE')} Millionen</div>
         </a>
         `;
+        const firstLetter = land['name'].charAt(0);
+        if(!letters.includes(firstLetter)) {
+            letters.push(firstLetter);
+        }   
     }
+    renderLetters();
+}
+
+function renderLetters() {
+    let letterbox = document.getElementById('search');
+    letterbox.innerHTML = '';
+
+    for (let i = 0; i < letters.length; i++) {
+        const letter = letters[i];
+        letterbox.innerHTML += /* html */ `
+        <div class="letters" onclick="letterFilter()">${letter}</div>
+        `;
+    }
+
+
 }

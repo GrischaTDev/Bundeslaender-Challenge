@@ -63,3 +63,20 @@ header {
     font-size: 14px;
     color: rgb(141, 141, 141);
 }
+
+#search {
+    display: flex;
+}
+
+.letters {
+    background-color: #dddddd;
+    padding: 5px;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
