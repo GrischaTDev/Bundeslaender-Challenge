@@ -9,7 +9,7 @@ async function init() {
 }
 
 
-function renderBundeslaender(responseAsJson) {
+function renderBundeslaender() {
     let laenderContent = document.getElementById('bundeslaender');
     laenderContent.innerHTML = '';
 
@@ -30,6 +30,11 @@ function renderBundeslaender(responseAsJson) {
     renderLetters();
 }
 
+
+function setFilter(letter) {
+    render(letter);
+}
+
 function renderLetters() {
     let letterbox = document.getElementById('search');
     letterbox.innerHTML = '';
@@ -37,7 +42,7 @@ function renderLetters() {
     for (let i = 0; i < letters.length; i++) {
         const letter = letters[i];
         letterbox.innerHTML += /* html */ `
-        <div class="letters" onclick="letterFilter()">${letter}</div>
+        <div class="letters" onclick="setFilter()">${letter}</div>
         `;
     }
 
