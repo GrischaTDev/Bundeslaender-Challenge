@@ -1,7 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
+    margin: 5px;
 }
 
 content {
@@ -33,7 +32,6 @@ header {
 
 #bundeslaender {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     flex-grow: 1;
 }
@@ -79,4 +77,12 @@ header {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+}
+
+
+@media (max-width: 800px) {
+
+    .laenderBox {
+        width: 100%;
+    }
 }
