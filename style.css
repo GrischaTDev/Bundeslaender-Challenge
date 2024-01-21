@@ -4,14 +4,16 @@ body {
 }
 
 content {
-    max-width: 1024px;
+    display: flex;
+    justify-content: center;
 }
 
 main {
-    margin: 5px;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    max-width: 1024px;
+    width: 1024px;
 }
 
 h1 {
@@ -33,7 +35,6 @@ header {
 #bundeslaender {
     display: flex;
     flex-wrap: wrap;
-    flex-grow: 1;
 }
 
 .laenderBox {
@@ -80,9 +81,14 @@ header {
 }
 
 
-@media (max-width: 800px) {
-
+@media(max-width: 800px) {
     .laenderBox {
-        width: 100%;
+        width: calc(50% - 10px);
+    }
+}
+
+@media(max-width: 500px) {
+    .laenderBox {
+        width: calc(100% - 10px);
     }
 }
